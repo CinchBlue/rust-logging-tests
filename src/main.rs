@@ -104,7 +104,7 @@ mod tests {
         
         // When: we test enough iterations
         // Then: we should get performance numbers
-        b.iter(log_single_info_line);
+        b.iter(|| { for i in 0..1000 { log_single_info_line() } });
     }
     
     #[bench]
@@ -114,7 +114,7 @@ mod tests {
         
         // When: we test enough iterations
         // Then: we should get performance numbers
-        b.iter(log_single_trace_line);
+        b.iter(|| { for i in 0..1000 { log_single_trace_line() } });
     }
     
     #[bench]
@@ -124,7 +124,7 @@ mod tests {
         
         // When: we test enough iterations
         // Then: we should get performance numbers
-        b.iter(log_multi_types_lines);
+        b.iter(|| { for i in 0..1000 { log_multi_types_lines() } });
     }
     
     #[bench]
@@ -134,7 +134,7 @@ mod tests {
         
         // When: we test enough iterations
         // Then: we should get performance numbers
-        b.iter(log_multi_info_lines);
+        b.iter(|| { for i in 0..1000 { log_multi_info_lines() } });
     }
     
     #[bench]
@@ -144,7 +144,7 @@ mod tests {
         
         // When: we test enough iterations
         // Then: we should get performance numbers
-        b.iter(log_single_info_line);
+        b.iter(|| { for i in 0..1000 { log_single_info_line() } });
     }
     
     #[bench]
@@ -154,7 +154,7 @@ mod tests {
         
         // When: we test enough iterations
         // Then: we should get performance numbers
-        b.iter(log_single_trace_line);
+        b.iter(|| { for i in 0..1000 { log_single_trace_line() } });
     }
     
     #[bench]
@@ -164,7 +164,7 @@ mod tests {
         
         // When: we test enough iterations
         // Then: we should get performance numbers
-        b.iter(log_multi_types_lines);
+        b.iter(|| { for i in 0..1000 { log_multi_types_lines() } });
     }
     
     #[bench]
@@ -174,6 +174,6 @@ mod tests {
         
         // When: we test enough iterations
         // Then: we should get performance numbers
-        b.iter(log_multi_info_lines);
+        b.iter(|| { for i in 0..1000 { log_multi_info_lines() } });
     }
 }
