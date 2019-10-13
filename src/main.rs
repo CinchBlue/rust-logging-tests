@@ -67,8 +67,11 @@ mod tests {
         
         let config = Config::builder()
             .appender(Appender::builder().build("stdout", Box::new(stdout)))
-            .appender(Appender::builder().build("requests", Box::new(file)))
-            .build(Root::builder().appender("stdout").build(LevelFilter::Info))
+            .appender(Appender::builder().build("file", Box::new(file)))
+            .build(Root::builder()
+                .appender("stdout")
+                .appender("file")
+                .build(LevelFilter::Info))
             .unwrap();
         
         let handle = log4rs::init_config(config).unwrap();
